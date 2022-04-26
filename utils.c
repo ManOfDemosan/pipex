@@ -6,7 +6,7 @@
 /*   By: jaehwkim <jaehwkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 15:48:20 by jaehwkim          #+#    #+#             */
-/*   Updated: 2022/04/26 16:40:23 by jaehwkim         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:13:45 by jaehwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*check_access(char *cmd, char **envp)
 	i = 0;
 	while (ft_strnstr(envp[i], "PATH", 4) == 0)
 		i++;
-	paths = ft_split(envp[i] + 5, ":");
+	paths = ft_split(envp[i] + 5, ':');
 	i = 0;
 	while (paths[i] != 0)
 	{
@@ -55,7 +55,7 @@ char	*check_access(char *cmd, char **envp)
 	}
 }
 
-void	make_stream(char *cmd char **envp)
+void	make_stream(char *cmd, char **envp)
 {
 	char	**argv;
 	char	*real_cmd;

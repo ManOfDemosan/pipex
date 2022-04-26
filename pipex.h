@@ -6,17 +6,22 @@
 /*   By: jaehwkim <jaehwkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 15:16:05 by jaehwkim          #+#    #+#             */
-/*   Updated: 2022/04/26 13:52:08 by jaehwkim         ###   ########.fr       */
+/*   Updated: 2022/04/26 17:14:32 by jaehwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PIPEX_H
 # define PIPEX_H
 
-# include "../libft/libft.h"
+# include "libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
+
+void	error_exit(void);
+char	*check_access(char *cmd, char **envp);
+void	make_stream(char *cmd, char **envp);
+int		arg_error(void);
 
 #endif 
