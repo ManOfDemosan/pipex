@@ -6,7 +6,7 @@
 /*   By: jaehwkim <jaehwkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 15:48:20 by jaehwkim          #+#    #+#             */
-/*   Updated: 2022/04/26 14:38:25 by jaehwkim         ###   ########.fr       */
+/*   Updated: 2022/04/26 16:35:11 by jaehwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,41 @@ void	error_exit(void)
 	exit(EXIT_FAILURE);
 }
 
+void	free_paths(char **paths)
+{
+	int	i;
+
+	i = 0;
+	while (paths[i])
+		free(paths[i++]);
+	free(paths);
+}
+
 char	*check_access(char *cmd, char **envp)
 {
+	int		i;
+	char	*real_cmd;
+	char	*slash_path;
+	char	**paths;
+
+	i = 0;
+	while (ft_strnstr(envp[i], "PATH", 4) == 0)
+		i++;
+	paths = ft_split(envp[i] + 5, ":");
+	i = 0;
+	while (path[i] != 0)
+	{
+		slash_path = ft_strjoin(paths[i], "/");
+		real_cmd = ft_strjoin(slash_path, cmd);
+		if (access(real_cmd, X_OK) == 0)
+		{
+			free_paths(paths);
+			return (real_cmd);
+		}
+		free(slash_path);
+		free(real_cmd);
+		i++;
+	}
 }
 
 void	make_stream(char *cmd char **envp)
