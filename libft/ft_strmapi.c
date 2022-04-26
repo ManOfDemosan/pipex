@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehwkim <jaehwkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 15:16:05 by jaehwkim          #+#    #+#             */
-/*   Updated: 2022/04/26 13:52:08 by jaehwkim         ###   ########.fr       */
+/*   Created: 2021/11/30 11:25:37 by jaehwkim          #+#    #+#             */
+/*   Updated: 2021/11/30 11:25:57 by jaehwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include <stdio.h>
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+{
+	unsigned int	i;
+	size_t			len;
+	char			*result;
 
-#endif 
+	if (s == 0)
+		return (0);
+	len = ft_strlen(s);
+	result = malloc(sizeof(char) * (len + 1));
+	if (result == 0)
+		return (0);
+	result[len] = '\0';
+	i = 0;
+	while (i < len)
+	{
+		result[i] = (*f)(i, s[i]);
+		i++;
+	}
+	return (result);
+}

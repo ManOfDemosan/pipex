@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaehwkim <jaehwkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 15:16:05 by jaehwkim          #+#    #+#             */
-/*   Updated: 2022/04/26 13:52:08 by jaehwkim         ###   ########.fr       */
+/*   Created: 2021/11/19 20:08:02 by jaehwkim          #+#    #+#             */
+/*   Updated: 2021/12/07 17:08:41 by jaehwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#include "libft.h"
 
-# include "../libft/libft.h"
-# include <unistd.h>
-# include <stdlib.h>
-# include <fcntl.h>
-# include <stdio.h>
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+{
+	size_t	i;
 
-#endif 
+	if (needle[0] == 0)
+		return ((char *)haystack);
+	while (*haystack != 0 && len-- > 0)
+	{
+		i = 0;
+		while (*(haystack + i) == *(needle + i) && i < len + 1)
+		{
+			i++;
+			if (*(needle + i) == 0)
+				return ((char *) haystack);
+		}
+		haystack++;
+	}
+	return (0);
+}
