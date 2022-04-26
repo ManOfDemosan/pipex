@@ -6,7 +6,7 @@
 /*   By: jaehwkim <jaehwkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 15:48:20 by jaehwkim          #+#    #+#             */
-/*   Updated: 2022/04/26 16:35:11 by jaehwkim         ###   ########.fr       */
+/*   Updated: 2022/04/26 16:40:23 by jaehwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*check_access(char *cmd, char **envp)
 		i++;
 	paths = ft_split(envp[i] + 5, ":");
 	i = 0;
-	while (path[i] != 0)
+	while (paths[i] != 0)
 	{
 		slash_path = ft_strjoin(paths[i], "/");
 		real_cmd = ft_strjoin(slash_path, cmd);
