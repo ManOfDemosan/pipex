@@ -6,7 +6,7 @@
 /*   By: jaehwkim <jaehwkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 15:48:20 by jaehwkim          #+#    #+#             */
-/*   Updated: 2022/04/26 17:13:45 by jaehwkim         ###   ########.fr       */
+/*   Updated: 2022/04/27 09:02:52 by jaehwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ char	*check_access(char *cmd, char **envp)
 		free(real_cmd);
 		i++;
 	}
+	return (0);
 }
 
 void	make_stream(char *cmd, char **envp)

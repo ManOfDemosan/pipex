@@ -6,7 +6,7 @@
 /*   By: jaehwkim <jaehwkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 15:14:30 by jaehwkim          #+#    #+#             */
-/*   Updated: 2022/04/26 17:14:06 by jaehwkim         ###   ########.fr       */
+/*   Updated: 2022/04/27 09:35:10 by jaehwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	child_pro(int *fd, char **argv, char **envp)
 		error_exit();
 	if (dup2(infile, STDIN_FILENO) == -1)
 		error_exit();
-	if (dup2(infile, STDOUT_FILENO) == -1)
+	if (dup2(fd[1], STDOUT_FILENO) == -1)
 		error_exit();
 	close(fd[0]);
 	make_stream(argv[2], envp);
