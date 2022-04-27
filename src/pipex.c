@@ -6,11 +6,11 @@
 /*   By: jaehwkim <jaehwkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 15:14:30 by jaehwkim          #+#    #+#             */
-/*   Updated: 2022/04/27 09:35:10 by jaehwkim         ###   ########.fr       */
+/*   Updated: 2022/04/27 09:52:14 by jaehwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../include/pipex.h"
 
 void	child_pro(int *fd, char **argv, char **envp)
 {

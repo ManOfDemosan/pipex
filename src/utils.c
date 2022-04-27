@@ -6,11 +6,11 @@
 /*   By: jaehwkim <jaehwkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 15:48:20 by jaehwkim          #+#    #+#             */
-/*   Updated: 2022/04/27 09:02:52 by jaehwkim         ###   ########.fr       */
+/*   Updated: 2022/04/27 09:52:22 by jaehwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "../include/pipex.h"
 
 void	error_exit(void)
 {
