@@ -6,7 +6,7 @@
 /*   By: jaehwkim <jaehwkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 15:16:05 by jaehwkim          #+#    #+#             */
-/*   Updated: 2022/04/27 09:51:53 by jaehwkim         ###   ########.fr       */
+/*   Updated: 2022/04/27 12:56:23 by jaehwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <stdio.h>
+# include <sys/wait.h>
 
 void	error_exit(void);
 char	*check_access(char *cmd, char **envp);

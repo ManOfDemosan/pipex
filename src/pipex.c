@@ -6,7 +6,7 @@
 /*   By: jaehwkim <jaehwkim@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 15:14:30 by jaehwkim          #+#    #+#             */
-/*   Updated: 2022/04/27 09:52:14 by jaehwkim         ###   ########.fr       */
+/*   Updated: 2022/04/27 13:36:11 by jaehwkim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,8 @@ void	child_pro(int *fd, char **argv, char **envp)
 void	parent_pro(int *fd, char **argv, char **envp)
 {
 	int	outfile;
-	int	status;
 
-	waitpid(-1, &status, WNOHANG);
+	waitpid(-1, 0, WNOHANG);
 	outfile = open(argv[4], O_WRONLY | O_CREAT | O_TRUNC, 0777);
 	if (outfile == -1)
 		error_exit();
